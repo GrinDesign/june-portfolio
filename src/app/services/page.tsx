@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Check, Clock, DollarSign } from 'lucide-react';
+import { Check, DollarSign } from 'lucide-react';
 
 const ServicesPage = () => {
     const services = [
@@ -224,7 +224,7 @@ const ServicesPage = () => {
                                     <div className="space-y-2">
                                         {service.recommendations.map((rec, idx) => (
                                             <div key={idx} className="text-sm text-dark-700 dark:text-dark-200 italic">
-                                                "{rec}"
+                                                &ldquo;{rec}&rdquo;
                                             </div>
                                         ))}
                                     </div>

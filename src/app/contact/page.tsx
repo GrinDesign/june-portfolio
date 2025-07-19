@@ -72,7 +72,7 @@ const ContactPage = () => {
                 subject: '',
                 message: '',
             });
-        } catch (error) {
+        } catch {
             setSubmitStatus('error');
         } finally {
             setIsSubmitting(false);
@@ -265,7 +265,7 @@ const ContactPage = () => {
                                         onChange={handleInputChange}
                                         required
                                         className="w-full px-4 py-3 border border-dark-200 dark:border-dark-600 rounded-lg bg-white dark:bg-dark-800 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-dark-900 dark:text-white"
-                                        placeholder="What's this about?"
+                                        placeholder="What&apos;s this about?"
                                     />
                                 </div>
 
