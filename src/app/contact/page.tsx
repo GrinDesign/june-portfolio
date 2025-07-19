@@ -92,7 +92,7 @@ const ContactPage = () => {
                     >
                         <div className="bg-white dark:bg-dark-800 rounded-2xl p-8 md:p-12 shadow-2xl border border-gray-200 dark:border-dark-700 mb-12">
                             <h1 className="text-4xl md:text-6xl font-bold">
-                                <span className="gradient-text">June's</span> <span className="gradient-text">Contact</span>
+                                <span className="gradient-text">June&apos;s</span> <span className="gradient-text">Contact</span>
                             </h1>
                         </div>
                         <p className="text-xl text-dark-600 dark:text-dark-300 max-w-3xl mx-auto mt-24 mb-24">
@@ -113,7 +113,7 @@ const ContactPage = () => {
                         className="max-w-4xl mx-auto"
                     >
                         <div className="bg-white dark:bg-dark-800 rounded-xl p-8 md:p-12 shadow-xl border border-gray-200 dark:border-dark-700">
-                            <h2 className="text-3xl font-bold mb-6 text-dark-900 dark:text-white text-center">Let's Connect</h2>
+                            <h2 className="text-3xl font-bold mb-6 text-dark-900 dark:text-white text-center">Let&apos;s Connect</h2>
                             <p className="text-dark-600 dark:text-dark-300 mb-8 text-center max-w-2xl mx-auto leading-relaxed">
                                 新しい機会や興味深いプロジェクトについて聞くことをいつも楽しみにしています。<br />
                                 質問、潜在的なコラボレーションの話し合い、または単に挨拶したい場合でも、<br />
