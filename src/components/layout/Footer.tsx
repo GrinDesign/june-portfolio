@@ -11,16 +11,16 @@ const Footer = () => {
         { name: 'GitHub', href: '#', icon: Github },
         { name: 'LinkedIn', href: '#', icon: Linkedin },
         { name: 'Twitter', href: '#', icon: Twitter },
-        { name: 'Email', href: 'mailto:contact@example.com', icon: Mail },
+        { name: 'Email', href: 'mailto:grin.desgin24@gmail.com', icon: Mail },
     ];
 
     const footerLinks = [
-        { name: 'Home', href: '/' },
+        { name: 'ホーム', href: '/' },
         { name: 'About', href: '/about' },
-        { name: 'Services', href: '/services' },
-        { name: 'Skills', href: '/skills' },
-        { name: 'Portfolio', href: '/portfolio' },
-        { name: 'Contact', href: '/contact' },
+        { name: 'サービス', href: '/services' },
+        { name: 'スキル', href: '/skills' },
+        { name: '実績', href: '/portfolio' },
+        { name: 'お問い合わせ', href: '/contact' },
     ];
 
     return (
@@ -33,12 +33,12 @@ const Footer = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5 }}
-                            className="space-y-4"
+                            className="space-y-4 mt-8"
                         >
                             <h3 className="text-2xl font-bold gradient-text">June</h3>
                             <p className="text-dark-300 max-w-md">
-                                Passionate developer creating innovative digital experiences.
-                                Let's build something amazing together.
+                                50代からのAI挑戦。だからこそ寄り添えます。
+                                毎日の面倒な作業を、AIで楽にしませんか？
                             </p>
                             <div className="flex space-x-4">
                                 {socialLinks.map((social) => (
@@ -61,9 +61,9 @@ const Footer = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="space-y-4"
+                        className="space-y-4 mt-8"
                     >
-                        <h4 className="text-lg font-semibold">Quick Links</h4>
+                        <h4 className="text-lg font-semibold">ページ一覧</h4>
                         <ul className="space-y-2">
                             {footerLinks.map((link) => (
                                 <li key={link.name}>
@@ -83,13 +83,28 @@ const Footer = () => {
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="space-y-4"
+                        className="space-y-4 mt-8"
                     >
-                        <h4 className="text-lg font-semibold">Contact</h4>
-                        <div className="space-y-2 text-dark-300">
-                            <p>contact@example.com</p>
-                            <p>+1 (555) 123-4567</p>
-                            <p>Tokyo, Japan</p>
+                        <h4 className="text-lg font-semibold">お問い合わせ</h4>
+                        <div className="space-y-3 text-dark-300">
+                            <div className="flex items-center space-x-2">
+                                <Mail className="w-4 h-4 text-primary-400" />
+                                <span>grin.desgin24@gmail.com</span>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <Linkedin className="w-4 h-4 text-primary-400" />
+                                <span>LinkedIn（準備中）</span>
+                            </div>
+                            <div className="pt-2 border-t border-dark-700">
+                                <p className="text-sm">
+                                    📍 津軽の古都・弘前<br />
+                                    🍎 りんごの街から、心の通ったAIソリューション
+                                </p>
+                                <p className="text-xs mt-2 text-dark-400">
+                                    初回のご相談はメールまたはオンライン面談で承っております。<br />
+                                    お気軽にお問い合わせください。
+                                </p>
+                            </div>
                         </div>
                     </motion.div>
                 </div>
@@ -99,12 +114,12 @@ const Footer = () => {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="border-t border-dark-700 mt-12 pt-8 text-center"
+                    className="border-t border-dark-700 mt-12 pt-8 pb-8 text-center"
                 >
                     <p className="text-dark-300 flex items-center justify-center space-x-1">
                         <span>© {currentYear} June. Made with</span>
                         <Heart className="w-4 h-4 text-red-500 fill-current" />
-                        <span>and Next.js</span>
+                        <span>, AI collaboration and Next.js</span>
                     </p>
                 </motion.div>
             </div>

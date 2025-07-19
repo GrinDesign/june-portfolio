@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Phone, MapPin, Send, User, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, MapPin, Send, User, MessageSquare, CheckCircle, AlertCircle } from 'lucide-react';
 
 interface ContactForm {
     name: string;
@@ -25,20 +25,27 @@ const ContactPage = () => {
         {
             icon: Mail,
             title: 'Email',
-            value: 'hello@june.dev',
-            link: 'mailto:hello@june.dev',
-        },
-        {
-            icon: Phone,
-            title: 'Phone',
-            value: '+81 90-1234-5678',
-            link: 'tel:+819012345678',
+            value: 'grin.desgin24@gmail.com',
+            link: 'mailto:grin.desgin24@gmail.com',
         },
         {
             icon: MapPin,
             title: 'Location',
-            value: 'Tokyo, Japan',
+            value: '弘前市、青森県',
             link: '#',
+        },
+    ];
+
+    const socialLinks = [
+        {
+            name: 'LinkedIn',
+            url: 'https://linkedin.com/in/your-profile',
+            icon: '💼',
+        },
+        {
+            name: 'X (Twitter)',
+            url: 'https://x.com/your-profile',
+            icon: '🐦',
         },
     ];
 
@@ -74,8 +81,8 @@ const ContactPage = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-primary-50 via-white to-secondary-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900">
-            {/* Hero Section */}
-            <section className="section-padding pt-32">
+            {/* Hero Section - Title & Subtitle */}
+            <section className="section-padding pt-32 pb-16">
                 <div className="container-custom">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
@@ -83,33 +90,38 @@ const ContactPage = () => {
                         transition={{ duration: 0.8 }}
                         className="text-center mb-16"
                     >
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                            Get In <span className="gradient-text">Touch</span>
-                        </h1>
-                        <p className="text-xl text-dark-600 dark:text-dark-300 max-w-3xl mx-auto">
-                            Ready to start your next project? Let's discuss how I can help bring your ideas to life.
+                        <div className="bg-white dark:bg-dark-800 rounded-2xl p-8 md:p-12 shadow-2xl border border-gray-200 dark:border-dark-700 mb-12">
+                            <h1 className="text-4xl md:text-6xl font-bold">
+                                <span className="gradient-text">June's</span> <span className="gradient-text">Contact</span>
+                            </h1>
+                        </div>
+                        <p className="text-xl text-dark-600 dark:text-dark-300 max-w-3xl mx-auto mt-24 mb-24">
+                            新しいプロジェクトを始める準備はできていますか？<br />
+                            <span className="block mt-2">あなたのアイデアを形にするお手伝いをさせていただきます。</span>
                         </p>
                     </motion.div>
+                </div>
+            </section>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                        {/* Contact Information */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, delay: 0.2 }}
-                            className="space-y-8"
-                        >
-                            <div>
-                                <h2 className="text-3xl font-bold mb-6">Let's Connect</h2>
-                                <p className="text-dark-600 dark:text-dark-300 mb-8">
-                                    I'm always excited to hear about new opportunities and interesting projects.
-                                    Whether you have a question, want to discuss a potential collaboration,
-                                    or just want to say hello, feel free to reach out!
-                                </p>
-                            </div>
+            {/* Contact Information Section */}
+            <section className="section-padding py-4">
+                <div className="container-custom">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                        className="max-w-4xl mx-auto"
+                    >
+                        <div className="bg-white dark:bg-dark-800 rounded-xl p-8 md:p-12 shadow-xl border border-gray-200 dark:border-dark-700">
+                            <h2 className="text-3xl font-bold mb-6 text-dark-900 dark:text-white text-center">Let's Connect</h2>
+                            <p className="text-dark-600 dark:text-dark-300 mb-8 text-center max-w-2xl mx-auto leading-relaxed">
+                                新しい機会や興味深いプロジェクトについて聞くことをいつも楽しみにしています。<br />
+                                質問、潜在的なコラボレーションの話し合い、または単に挨拶したい場合でも、<br />
+                                お気軽にお声かけください！
+                            </p>
 
                             {/* Contact Info Cards */}
-                            <div className="space-y-6">
+                            <div className="grid md:grid-cols-2 gap-6 mb-8">
                                 {contactInfo.map((info, index) => (
                                     <motion.a
                                         key={info.title}
@@ -118,13 +130,13 @@ const ContactPage = () => {
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
                                         whileHover={{ scale: 1.02 }}
-                                        className="glass-card p-6 flex items-center space-x-4 group cursor-pointer"
+                                        className="bg-gray-50 dark:bg-dark-700 rounded-xl p-6 flex items-center space-x-4 group cursor-pointer shadow-lg border border-gray-200 dark:border-dark-600"
                                     >
                                         <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
                                             <info.icon className="w-6 h-6 text-white" />
                                         </div>
                                         <div>
-                                            <h3 className="font-semibold text-lg">{info.title}</h3>
+                                            <h3 className="font-semibold text-lg text-dark-900 dark:text-white">{info.title}</h3>
                                             <p className="text-dark-600 dark:text-dark-300 group-hover:text-primary-600 transition-colors">
                                                 {info.value}
                                             </p>
@@ -134,42 +146,40 @@ const ContactPage = () => {
                             </div>
 
                             {/* Social Links */}
-                            <motion.div
-                                initial={{ opacity: 0, y: 30 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ duration: 0.8, delay: 0.6 }}
-                                className="pt-8"
-                            >
-                                <h3 className="text-xl font-semibold mb-4">Follow Me</h3>
-                                <div className="flex space-x-4">
-                                    {[
-                                        { name: 'GitHub', url: '#', icon: '🐙' },
-                                        { name: 'LinkedIn', url: '#', icon: '💼' },
-                                        { name: 'Twitter', url: '#', icon: '🐦' },
-                                        { name: 'Dribbble', url: '#', icon: '🏀' },
-                                    ].map((social) => (
+                            <div className="text-center">
+                                <h3 className="text-xl font-semibold mb-4 text-dark-900 dark:text-white">Follow June</h3>
+                                <div className="flex justify-center space-x-6">
+                                    {socialLinks.map((social) => (
                                         <motion.a
                                             key={social.name}
                                             href={social.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
                                             whileHover={{ scale: 1.1, y: -2 }}
                                             whileTap={{ scale: 0.95 }}
-                                            className="w-12 h-12 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-lg hover:shadow-lg transition-shadow"
+                                            className="w-14 h-14 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white font-bold text-xl hover:shadow-lg transition-shadow"
                                         >
                                             {social.icon}
                                         </motion.a>
                                     ))}
                                 </div>
-                            </motion.div>
-                        </motion.div>
+                            </div>
+                        </div>
+                    </motion.div>
+                </div>
+            </section>
 
-                        {/* Contact Form */}
-                        <motion.div
-                            initial={{ opacity: 0, x: 30 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.8, delay: 0.4 }}
-                            className="glass-card p-8"
-                        >
-                            <h2 className="text-2xl font-bold mb-6">Send Message</h2>
+            {/* Contact Form Section */}
+            <section className="section-padding py-16 pb-32">
+                <div className="container-custom">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        className="max-w-4xl mx-auto"
+                    >
+                        <div className="bg-white dark:bg-dark-800 rounded-xl p-8 md:p-12 shadow-xl border border-gray-200 dark:border-dark-700">
+                            <h2 className="text-2xl font-bold mb-8 text-dark-900 dark:text-white text-center">Send Message</h2>
 
                             {/* Success/Error Messages */}
                             {submitStatus === 'success' && (
@@ -180,7 +190,7 @@ const ContactPage = () => {
                                 >
                                     <CheckCircle className="w-5 h-5 text-green-600" />
                                     <span className="text-green-800 dark:text-green-200">
-                                        Thank you! Your message has been sent successfully.
+                                        ありがとうございます！メッセージが正常に送信されました。
                                     </span>
                                 </motion.div>
                             )}
@@ -193,15 +203,17 @@ const ContactPage = () => {
                                 >
                                     <AlertCircle className="w-5 h-5 text-red-600" />
                                     <span className="text-red-800 dark:text-red-200">
-                                        Something went wrong. Please try again.
+                                        エラーが発生しました。もう一度お試しください。
                                     </span>
                                 </motion.div>
                             )}
 
                             <form onSubmit={handleSubmit} className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                {/* Name and Email Fields - Side by Side on Desktop */}
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    {/* Name Field */}
                                     <div>
-                                        <label htmlFor="name" className="block text-sm font-medium mb-2">
+                                        <label htmlFor="name" className="block text-sm font-medium mb-2 text-dark-900 dark:text-white">
                                             Name *
                                         </label>
                                         <div className="relative">
@@ -213,14 +225,15 @@ const ContactPage = () => {
                                                 value={formData.name}
                                                 onChange={handleInputChange}
                                                 required
-                                                className="w-full pl-10 pr-4 py-3 border border-dark-200 dark:border-dark-600 rounded-lg bg-white dark:bg-dark-800 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                                                className="w-full pl-10 pr-4 py-3 border border-dark-200 dark:border-dark-600 rounded-lg bg-white dark:bg-dark-800 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-dark-900 dark:text-white"
                                                 placeholder="Your name"
                                             />
                                         </div>
                                     </div>
 
+                                    {/* Email Field */}
                                     <div>
-                                        <label htmlFor="email" className="block text-sm font-medium mb-2">
+                                        <label htmlFor="email" className="block text-sm font-medium mb-2 text-dark-900 dark:text-white">
                                             Email *
                                         </label>
                                         <div className="relative">
@@ -232,15 +245,16 @@ const ContactPage = () => {
                                                 value={formData.email}
                                                 onChange={handleInputChange}
                                                 required
-                                                className="w-full pl-10 pr-4 py-3 border border-dark-200 dark:border-dark-600 rounded-lg bg-white dark:bg-dark-800 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                                                className="w-full pl-10 pr-4 py-3 border border-dark-200 dark:border-dark-600 rounded-lg bg-white dark:bg-dark-800 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-dark-900 dark:text-white"
                                                 placeholder="your@email.com"
                                             />
                                         </div>
                                     </div>
                                 </div>
 
+                                {/* Subject Field */}
                                 <div>
-                                    <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                                    <label htmlFor="subject" className="block text-sm font-medium mb-2 text-dark-900 dark:text-white">
                                         Subject *
                                     </label>
                                     <input
@@ -250,13 +264,14 @@ const ContactPage = () => {
                                         value={formData.subject}
                                         onChange={handleInputChange}
                                         required
-                                        className="w-full px-4 py-3 border border-dark-200 dark:border-dark-600 rounded-lg bg-white dark:bg-dark-800 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors"
+                                        className="w-full px-4 py-3 border border-dark-200 dark:border-dark-600 rounded-lg bg-white dark:bg-dark-800 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors text-dark-900 dark:text-white"
                                         placeholder="What's this about?"
                                     />
                                 </div>
 
+                                {/* Message Field */}
                                 <div>
-                                    <label htmlFor="message" className="block text-sm font-medium mb-2">
+                                    <label htmlFor="message" className="block text-sm font-medium mb-2 text-dark-900 dark:text-white">
                                         Message *
                                     </label>
                                     <div className="relative">
@@ -268,66 +283,35 @@ const ContactPage = () => {
                                             onChange={handleInputChange}
                                             required
                                             rows={6}
-                                            className="w-full pl-10 pr-4 py-3 border border-dark-200 dark:border-dark-600 rounded-lg bg-white dark:bg-dark-800 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none"
+                                            className="w-full pl-10 pr-4 py-3 border border-dark-200 dark:border-dark-600 rounded-lg bg-white dark:bg-dark-800 focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none text-dark-900 dark:text-white"
                                             placeholder="Tell me about your project..."
                                         />
                                     </div>
                                 </div>
 
-                                <motion.button
-                                    type="submit"
-                                    disabled={isSubmitting}
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="w-full btn-primary flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                                >
-                                    {isSubmitting ? (
-                                        <>
-                                            <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                            <span>Sending...</span>
-                                        </>
-                                    ) : (
-                                        <>
-                                            <Send className="w-5 h-5" />
-                                            <span>Send Message</span>
-                                        </>
-                                    )}
-                                </motion.button>
+                                {/* Submit Button */}
+                                <div className="flex justify-center pt-4">
+                                    <motion.button
+                                        type="submit"
+                                        disabled={isSubmitting}
+                                        whileHover={{ scale: 1.02 }}
+                                        whileTap={{ scale: 0.98 }}
+                                        className="w-2/3 py-4 px-8 bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-bold text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    >
+                                        {isSubmitting ? (
+                                            <>
+                                                <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin mr-3" />
+                                                <span>送信中...</span>
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Send className="w-6 h-6 mr-3" />
+                                                <span>Send Message</span>
+                                            </>
+                                        )}
+                                    </motion.button>
+                                </div>
                             </form>
-                        </motion.div>
-                    </div>
-                </div>
-            </section>
-
-            {/* Map Section */}
-            <section className="section-padding bg-gradient-to-r from-primary-100 to-secondary-100 dark:from-dark-800 dark:to-dark-700">
-                <div className="container-custom">
-                    <motion.div
-                        initial={{ opacity: 0, y: 30 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                        className="text-center mb-12"
-                    >
-                        <h2 className="text-3xl font-bold mb-4">Find Me Here</h2>
-                        <p className="text-dark-600 dark:text-dark-300">
-                            Based in Tokyo, Japan - but available for remote work worldwide
-                        </p>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.8 }}
-                        className="glass-card h-64 rounded-xl overflow-hidden"
-                    >
-                        <div className="w-full h-full bg-gradient-to-br from-primary-200 to-secondary-200 dark:from-dark-600 dark:to-dark-500 flex items-center justify-center">
-                            <div className="text-center">
-                                <MapPin className="w-16 h-16 text-primary-600 mx-auto mb-4" />
-                                <p className="text-lg font-medium">Tokyo, Japan</p>
-                                <p className="text-dark-600 dark:text-dark-300">
-                                    Available for remote collaboration worldwide
-                                </p>
-                            </div>
                         </div>
                     </motion.div>
                 </div>

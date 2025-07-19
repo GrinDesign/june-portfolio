@@ -1,103 +1,102 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code, Database, Palette, Smartphone, Cloud, Zap } from 'lucide-react';
 
 const SkillsPage = () => {
     const skillCategories = [
         {
-            icon: Code,
-            title: 'Frontend Development',
+            icon: '💻',
+            title: 'フロントエンド開発',
             color: 'from-blue-500 to-cyan-500',
             skills: [
-                { name: 'React', level: 95 },
-                { name: 'Next.js', level: 90 },
-                { name: 'TypeScript', level: 88 },
-                { name: 'JavaScript', level: 92 },
-                { name: 'HTML/CSS', level: 95 },
-                { name: 'Tailwind CSS', level: 90 },
+                { name: 'React', level: 65 },
+                { name: 'HTML/CSS', level: 75 },
+                { name: 'JavaScript', level: 65 },
+                { name: 'Tailwind CSS', level: 80 },
+                { name: 'TypeScript', level: 35 },
             ],
         },
         {
-            icon: Database,
-            title: 'Backend Development',
+            icon: '⚙️',
+            title: 'バックエンド開発',
             color: 'from-green-500 to-emerald-500',
             skills: [
-                { name: 'Node.js', level: 85 },
-                { name: 'Express.js', level: 88 },
-                { name: 'Python', level: 80 },
-                { name: 'PostgreSQL', level: 82 },
-                { name: 'MongoDB', level: 78 },
-                { name: 'GraphQL', level: 75 },
+                { name: 'Python', level: 85 },
+                { name: 'Node.js', level: 65 },
+                { name: 'API Integration', level: 70 },
+                { name: 'SQLite', level: 70 },
+                { name: 'Supabase', level: 60 },
             ],
         },
         {
-            icon: Palette,
-            title: 'Design & UI/UX',
+            icon: '🎨',
+            title: 'デザイン・UI/UX',
             color: 'from-purple-500 to-pink-500',
             skills: [
-                { name: 'Figma', level: 85 },
-                { name: 'Adobe XD', level: 80 },
+                { name: 'CANVA', level: 85 },
                 { name: 'Photoshop', level: 75 },
-                { name: 'Illustrator', level: 70 },
-                { name: 'Prototyping', level: 88 },
-                { name: 'Design Systems', level: 82 },
+                { name: 'Figma', level: 60 },
+                { name: 'Prototyping', level: 60 },
+                { name: 'Illustrator', level: 45 },
             ],
         },
+
+
         {
-            icon: Smartphone,
-            title: 'Mobile Development',
-            color: 'from-orange-500 to-red-500',
-            skills: [
-                { name: 'React Native', level: 80 },
-                { name: 'Flutter', level: 75 },
-                { name: 'iOS Development', level: 70 },
-                { name: 'Android Development', level: 72 },
-                { name: 'Mobile UI/UX', level: 85 },
-                { name: 'App Store Optimization', level: 78 },
-            ],
-        },
-        {
-            icon: Cloud,
-            title: 'DevOps & Cloud',
-            color: 'from-indigo-500 to-blue-500',
-            skills: [
-                { name: 'AWS', level: 80 },
-                { name: 'Docker', level: 85 },
-                { name: 'Kubernetes', level: 70 },
-                { name: 'CI/CD', level: 82 },
-                { name: 'Git', level: 90 },
-                { name: 'Linux', level: 75 },
-            ],
-        },
-        {
-            icon: Zap,
-            title: 'Tools & Others',
+            icon: '🛠️',
+            title: 'ツール・その他',
             color: 'from-yellow-500 to-orange-500',
             skills: [
-                { name: 'VS Code', level: 95 },
-                { name: 'GitHub', level: 90 },
-                { name: 'Postman', level: 85 },
-                { name: 'Jira', level: 80 },
-                { name: 'Figma', level: 85 },
-                { name: 'Notion', level: 88 },
+                { name: 'Claude', level: 95 },
+                { name: 'ChatGPT', level: 90 },
+                { name: 'Gemini', level: 85 },
+                { name: 'Cursor', level: 85 },
+                { name: 'Git/GitHub', level: 80 },
+                { name: 'Vercel', level: 70 },
             ],
         },
     ];
 
+    const uniqueSkills = [
+        {
+            icon: '🤝',
+            title: 'AI協働開発',
+            description: '複数AI（Claude・ChatGPT・Gemini・Cursor）との協働チーム運営により、従来比3-5倍の開発効率を実現',
+            color: 'from-primary-500 to-secondary-500'
+        },
+        {
+            icon: '🔍',
+            title: 'ニーズ理解・整理力',
+            description: '真のニーズに向き合い、本質的な課題を共に整理します',
+            color: 'from-secondary-500 to-accent-500'
+        },
+        {
+            icon: '💡',
+            title: '効率化実現力',
+            description: '1日でポートフォリオサイト稼働など、劇的な効率化を実現',
+            color: 'from-accent-500 to-primary-500'
+        },
+        {
+            icon: '🎯',
+            title: '丁寧なサポート',
+            description: '技術用語を使わず、お客様のペースに合わせた安心できる進め方を重視',
+            color: 'from-primary-600 to-secondary-600'
+        }
+    ];
+
     const technologies = [
         { name: 'React', icon: '⚛️' },
-        { name: 'Next.js', icon: '▲' },
-        { name: 'TypeScript', icon: '📘' },
-        { name: 'Node.js', icon: '🟢' },
+        { name: 'JavaScript', icon: '📜' },
         { name: 'Python', icon: '🐍' },
-        { name: 'PostgreSQL', icon: '🐘' },
-        { name: 'MongoDB', icon: '🍃' },
-        { name: 'Docker', icon: '🐳' },
-        { name: 'AWS', icon: '☁️' },
+        { name: 'Node.js', icon: '🟢' },
+        { name: 'Tailwind CSS', icon: '🎯' },
+        { name: 'HTML/CSS', icon: '🌐' },
+        { name: 'TypeScript', icon: '📘' },
         { name: 'Figma', icon: '🎨' },
-        { name: 'Git', icon: '📝' },
-        { name: 'Tailwind', icon: '🎯' },
+        { name: 'CANVA', icon: '🎭' },
+        { name: 'Photoshop', icon: '🖼️' },
+        { name: 'Git/GitHub', icon: '📝' },
+        { name: 'Vercel', icon: '▲' },
     ];
 
     return (
@@ -112,10 +111,10 @@ const SkillsPage = () => {
                         className="text-center mb-16"
                     >
                         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                            My <span className="gradient-text">Skills</span>
+                            <span className="gradient-text">Skills</span>
                         </h1>
                         <p className="text-xl text-dark-600 dark:text-dark-300 max-w-3xl mx-auto">
-                            A comprehensive overview of my technical expertise and the tools I use to bring ideas to life.
+                            技術的な専門知識と、アイデアを形にするために使用するツールの包括的な概要をご紹介します。
                         </p>
                     </motion.div>
 
@@ -127,12 +126,12 @@ const SkillsPage = () => {
                                 initial={{ opacity: 0, y: 30 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="glass-card p-6"
+                                className="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-xl border border-gray-200 dark:border-dark-700"
                             >
                                 <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-lg flex items-center justify-center mb-6`}>
-                                    <category.icon className="w-8 h-8 text-white" />
+                                    <span className="text-2xl">{category.icon}</span>
                                 </div>
-                                <h3 className="text-xl font-bold mb-6">{category.title}</h3>
+                                <h3 className="text-xl font-bold mb-6 text-dark-900 dark:text-white">{category.title}</h3>
                                 <div className="space-y-4">
                                     {category.skills.map((skill, skillIndex) => (
                                         <motion.div
@@ -142,7 +141,7 @@ const SkillsPage = () => {
                                             transition={{ duration: 0.3, delay: 0.6 + index * 0.1 + skillIndex * 0.05 }}
                                         >
                                             <div className="flex justify-between mb-2">
-                                                <span className="font-medium text-sm">{skill.name}</span>
+                                                <span className="font-medium text-sm text-dark-800 dark:text-dark-100">{skill.name}</span>
                                                 <span className="text-primary-600 text-sm">{skill.level}%</span>
                                             </div>
                                             <div className="w-full bg-dark-200 dark:bg-dark-700 rounded-full h-2">
@@ -160,21 +159,50 @@ const SkillsPage = () => {
                         ))}
                     </div>
 
+                    {/* Unique Skills Section */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.4 }}
+                        className="mb-16"
+                    >
+                        <h2 className="text-3xl font-bold text-center mb-12 text-dark-900 dark:text-white">独自の価値提供スキル</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {uniqueSkills.map((skill, index) => (
+                                <motion.div
+                                    key={skill.title}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
+                                    className="bg-white dark:bg-dark-800 rounded-xl p-6 shadow-xl border border-gray-200 dark:border-dark-700 text-center"
+                                >
+                                    <div className={`w-16 h-16 bg-gradient-to-br ${skill.color} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                                        <span className="text-2xl">{skill.icon}</span>
+                                    </div>
+                                    <h4 className="text-lg font-bold mb-3 text-dark-900 dark:text-white">{skill.title}</h4>
+                                    <p className="text-sm text-dark-700 dark:text-dark-200 leading-relaxed">
+                                        {skill.description}
+                                    </p>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
+
                     {/* Technologies Grid */}
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                        className="glass-card p-8 mb-16"
+                        transition={{ duration: 0.8, delay: 0.8 }}
+                        className="bg-white dark:bg-dark-800 rounded-xl p-8 shadow-xl border border-gray-200 dark:border-dark-700 mb-16"
                     >
-                        <h2 className="text-3xl font-bold text-center mb-12">Technologies I Work With</h2>
+                        <h2 className="text-3xl font-bold text-center mb-12 text-dark-900 dark:text-white">使用技術</h2>
                         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
                             {technologies.map((tech, index) => (
                                 <motion.div
                                     key={tech.name}
                                     initial={{ opacity: 0, scale: 0.8 }}
                                     animate={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 0.3, delay: 0.8 + index * 0.05 }}
+                                    transition={{ duration: 0.3, delay: 1.0 + index * 0.05 }}
                                     className="text-center group"
                                 >
                                     <div className="w-16 h-16 bg-gradient-to-br from-primary-100 to-secondary-100 dark:from-dark-700 dark:to-dark-600 rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
@@ -190,20 +218,20 @@ const SkillsPage = () => {
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, delay: 1.0 }}
+                        transition={{ duration: 0.8, delay: 1.2 }}
                         className="grid grid-cols-1 md:grid-cols-3 gap-8"
                     >
-                        <div className="glass-card p-6 text-center">
-                            <div className="text-4xl font-bold gradient-text mb-2">5+</div>
-                            <div className="text-dark-600 dark:text-dark-300">Years Experience</div>
+                        <div className="bg-white dark:bg-dark-800 rounded-xl p-6 text-center shadow-xl border border-gray-200 dark:border-dark-700">
+                            <div className="text-4xl font-bold gradient-text mb-2">3ヶ月</div>
+                            <div className="text-dark-600 dark:text-dark-300">AI協働経験</div>
                         </div>
-                        <div className="glass-card p-6 text-center">
-                            <div className="text-4xl font-bold gradient-text mb-2">50+</div>
-                            <div className="text-dark-600 dark:text-dark-300">Projects Completed</div>
+                        <div className="bg-white dark:bg-dark-800 rounded-xl p-6 text-center shadow-xl border border-gray-200 dark:border-dark-700">
+                            <div className="text-4xl font-bold gradient-text mb-2">3倍速</div>
+                            <div className="text-dark-600 dark:text-dark-300">開発効率</div>
                         </div>
-                        <div className="glass-card p-6 text-center">
-                            <div className="text-4xl font-bold gradient-text mb-2">20+</div>
-                            <div className="text-dark-600 dark:text-dark-300">Technologies Mastered</div>
+                        <div className="bg-white dark:bg-dark-800 rounded-xl p-6 text-center shadow-xl border border-gray-200 dark:border-dark-700">
+                            <div className="text-4xl font-bold gradient-text mb-2">1件</div>
+                            <div className="text-dark-600 dark:text-dark-300">作成件数</div>
                         </div>
                     </motion.div>
                 </div>

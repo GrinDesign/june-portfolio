@@ -211,22 +211,6 @@ export default function AboutPage() {
                                     </div>
                                 </div>
 
-                                {/* Development Approach */}
-                                <div className="space-y-3 pt-4 border-t border-dark-200 dark:border-dark-700">
-                                    <h4 className="text-sm font-semibold text-dark-900 dark:text-white text-center xl:text-left">
-                                        開発手法について
-                                    </h4>
-                                    <div className="space-y-2">
-                                        <p className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed text-center xl:text-left">
-                                            最新のAI協働開発手法を活用し、高品質なシステムを効率的に開発しています。
-                                        </p>
-                                        <p className="text-sm text-dark-600 dark:text-dark-300 leading-relaxed text-center xl:text-left">
-                                            Claude、ChatGPT、Cursorなどの最新AIツールと人間の創造性を組み合わせた
-                                            独自のアプローチで、従来比3-5倍の開発効率を実現しています。
-                                        </p>
-                                    </div>
-                                </div>
-
                                 {/* Call to Action */}
                                 <div className="pt-2 text-center xl:text-left">
                                     <p className="text-xs text-dark-500 dark:text-dark-400 mb-3">
